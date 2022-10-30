@@ -1,9 +1,14 @@
 package it.ji.server.models;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "students")
 public class Student {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
     private String name;
     private String surname;
