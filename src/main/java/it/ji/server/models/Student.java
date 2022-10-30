@@ -1,7 +1,12 @@
 package it.ji.server.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "students")
@@ -12,22 +17,30 @@ public class Student {
     private long id;
     private String name;
     private String surname;
+
+    private LocalDate birthDate;
+
+    @OneToMany
+    private List<Telephone> telephones;
+    @Transient
     private int age;
+
 
     public Student() {
     }
 
-    public Student(long id, String name, String surname, int age) {
+
+    public Student(long id, String name, String surname, LocalDate birthDate) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.age = age;
+        this.birthDate = birthDate;
     }
 
-    public Student(String name, String surname, int age) {
+    public Student(String name, String surname, LocalDate birthDate) {
         this.name = name;
         this.surname = surname;
-        this.age = age;
+        this.birthDate = birthDate;
     }
 
     public long getId() {
@@ -55,10 +68,33 @@ public class Student {
     }
 
     public int getAge() {
-        return age;
+        return Period.between(this.birthDate, LocalDate.now()).getYears();
     }
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public List<Telephone> getTelephones() {
+        return telephones;
+    }
+
+    public void setTelephones(List<Telephone> telephones) {
+        this.telephones = telephones;
+    }
+
+    public void addTelephone(Telephone telephone){
+        if(this.telephones == null){
+            this.telephones = new LinkedList<>();
+        }
+        this.telephones.add(telephone);
     }
 }
