@@ -17,9 +17,6 @@ public class StudentSuiteServerApplication {
     @GetMapping
     public Student hello() {
         Student p = new Student("Luca", "Coraci", 12);
-        p.addAnimale(new Animale("Gino", "Cane"));
-        p.addAnimale(new Animale("Catto", "Gatto"));
-        p.addAnimale(new Animale("Bob", "Pesce"));
         return p;
     }
 }
