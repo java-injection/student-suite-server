@@ -49,13 +49,12 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
-      - name: Run unit tests
-        run: mvn test
-
+        - name: Test with Maven
+            run: mvn -B test --file pom.xml
 
   build:
     runs-on: ubuntu-latest
-    name: Run mvn build and generate coverage report
+    name: Run mvn build
     needs: test
     steps:
       - uses: actions/checkout@v2
