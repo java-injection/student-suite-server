@@ -50,7 +50,7 @@ jobs:
         with:
           java-version: 17
       - name: Test with Maven
-          run: mvn -B test --file pom.xml
+        run: mvn -B test --file pom.xml
 
   build:
     runs-on: ubuntu-latest
