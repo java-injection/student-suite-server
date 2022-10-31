@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,5 +41,22 @@ public class StudentService {
             throw new IllegalStateException("Lo studente con id: "+id+" non esiste!");
         }
         this.studentRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void updateNameAndEmail(Long id, String name, String email) {
+        Student student = this.studentRepository.findById(id).orElseThrow(
+                () -> {
+                    throw new IllegalStateException("Lo studente con id: "+id+" non esiste!");
+                }
+        );
+
+        Optional<Student> studentByEmail = this.studentRepository.findStudentByEmail(email);
+        if(studentByEmail.isPresent()){
+            throw new IllegalStateException("L'email "+email+" è in uso presso un altro utente");
+        }
+        student.setName(name);
+        student.setEmail(email);
+
     }
 }
