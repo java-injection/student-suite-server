@@ -5,6 +5,7 @@ import it.ji.server.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -18,8 +19,13 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    @GetMapping
+
     public List<Student> getAllStudents() {
         return this.studentRepository.findAll();
+    }
+
+    public void registerStudent(Student student) {
+        this.studentRepository.save(student);
+        System.out.println("SALVA TUTTO DELONGHI");
     }
 }
