@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -25,7 +26,19 @@ public class StudentService {
     }
 
     public void registerStudent(Student student) {
+
+        Optional<Student> optionalStudent = this.studentRepository.findStudentByEmail(student.getEmail());
+        if(optionalStudent.isPresent()){
+            throw new IllegalStateException("Lo studente è già esistente");
+        }
         this.studentRepository.save(student);
         System.out.println("SALVA TUTTO DELONGHI");
+    }
+
+    public void deleteStudent(Long id) {
+        if(!this.studentRepository.existsById(id)){
+            throw new IllegalStateException("Lo studente con id: "+id+" non esiste!");
+        }
+        this.studentRepository.deleteById(id);
     }
 }

@@ -20,9 +20,19 @@ public class StudentConfiguration {
         return args -> {
             Telephone t1 = new Telephone("123");
             telephoneRepository.save(t1);
-            Student gino = new Student("Gino", "Rossi", LocalDate.of(1984, Month.SEPTEMBER, 13));
+            Student gino = new Student(
+                    "Gino",
+                    "Rossi",
+                    LocalDate.of(1984, Month.SEPTEMBER, 13),
+                    "gino.rossi@gmail.com"
+            );
             gino.addTelephone(t1);
-            Student simone = new Student("Simone", "Verdi", LocalDate.of(2001, Month.JANUARY, 29));
+            Student simone = new Student(
+                    "Simone",
+                    "Verdi",
+                    LocalDate.of(2001, Month.JANUARY, 29),
+                    "simone.verdi@libero.it"
+            );
             Telephone t2 = new Telephone("11111");
             Telephone t3 = new Telephone("22222");
             telephoneRepository.save(t2);
