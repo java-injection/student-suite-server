@@ -17,6 +17,7 @@ public class StudentSuiteServerApplication {
 
     //testing git guardian
     public final static String API_KEY_FARLOCCA = "REDATTO";
+    public final static String API_KEY_FARLOCCA_2 = "REDATTO";
     public static void main(String[] args) {
         SpringApplication.run(StudentSuiteServerApplication.class, args);
 
