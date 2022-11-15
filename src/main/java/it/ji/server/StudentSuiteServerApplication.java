@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentSuiteServerApplication {
 
 
+    //testing git guardian
+    public final static String API_KEY_FARLOCCA = "REDATTO";
     public static void main(String[] args) {
         SpringApplication.run(StudentSuiteServerApplication.class, args);
 
