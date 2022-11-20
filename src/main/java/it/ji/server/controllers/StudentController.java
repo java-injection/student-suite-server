@@ -9,7 +9,7 @@ import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController()
-@RequestMapping(path = "api/v1/students")
+@RequestMapping(path = "api/v1/studenti")
 public class StudentController {
     
     private final StudentService studentService;
@@ -21,6 +21,7 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
+        ciao
         return studentService.getAllStudents();
     }
 
@@ -32,6 +33,7 @@ public class StudentController {
     public void deleteStudent(@PathVariable("student_id") Long id){
         this.studentService.deleteStudent(id);
     }
+
     @PutMapping(path = "{student_id}")
     public void updateStudent(
            @PathVariable("student_id") Long id,
