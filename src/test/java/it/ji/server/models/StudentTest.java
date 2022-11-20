@@ -35,4 +35,11 @@ class StudentTest {
         String updatedName = s1.getName();
         assertEquals("Marco",updatedName);
     }
+
+    @Test
+    void fakeFailTest() {
+        assertEquals("Test","Tost");
+    }
+    
+
 }
