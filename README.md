@@ -14,3 +14,7 @@
 ---
 
 [![Java CI with Maven](https://github.com/java-injection/student-suite-server/actions/workflows/main.yml/badge.svg)](https://github.com/java-injection/student-suite-server/actions/workflows/main.yml)
+[![Quality Gate Status](https://sonar.java-injection.dev/api/project_badges/measure?project=student-suite-server&metric=alert_status&token=4c35414ebba8aa5c1012f448447c6a253eb24f6a)](https://sonar.java-injection.dev/dashboard?id=student-suite-server)
+![Coverage](https://lin.java-injection.dev/coverage/sonarqube?url=sonar.java-injection.dev&project-key=student-suite-server&token=4c35414ebba8aa5c1012f448447c6a253eb24f6a)
+[![Security Rating](https://sonar.java-injection.dev/api/project_badges/measure?project=student-suite-server&metric=security_rating&token=4c35414ebba8aa5c1012f448447c6a253eb24f6a)](https://sonar.java-injection.dev/dashboard?id=student-suite-server)
+[![Bugs](https://sonar.java-injection.dev/api/project_badges/measure?project=student-suite-server&metric=bugs&token=4c35414ebba8aa5c1012f448447c6a253eb24f6a)](https://sonar.java-injection.dev/dashboard?id=student-suite-server)
