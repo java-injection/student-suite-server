@@ -35,7 +35,7 @@ class StudentTest {
         String updatedName = s1.getName();
         assertEquals("Marco",updatedName);
     }
-    
+
 
 
 }
