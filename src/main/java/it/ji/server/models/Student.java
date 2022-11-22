@@ -3,10 +3,8 @@ package it.ji.server.models;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "students")

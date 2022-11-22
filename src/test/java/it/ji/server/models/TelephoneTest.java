@@ -21,6 +21,9 @@ class TelephoneTest {
 
     @Test
     void setId() {
+        Telephone t1 = new Telephone(1L,"123");
+        t1.setId(2L);
+        assertEquals(2L, t1.getId());
     }
 
     @Test

@@ -1,6 +1,5 @@
 package it.ji.server.controllers;
 
-import it.ji.server.models.Student;
 import it.ji.server.models.Telephone;
 import it.ji.server.services.TelephoneService;
 import org.springframework.beans.factory.annotation.Autowired;
