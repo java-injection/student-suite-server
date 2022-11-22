@@ -10,7 +10,7 @@ jobs:
   deploy:
     name: test strings
     runs-on: ubuntu-latest
-    environments:
+    environment:
       name: release
       url: java-injection.dev
     steps:
