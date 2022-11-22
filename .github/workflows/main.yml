@@ -120,3 +120,21 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage -Dsonar.projectKey=student-suite-server -Dsonar.qualitygate.wait=true -X
+
+
+  deploy:
+    needs: build
+    name: deploy on dev
+    runs-on: ubuntu-latest
+    environment:
+      name: develop
+      url: java-injection.dev
+    steps:
+      - name: create string
+        run: |
+          MY_STRING="Depoloying on Test Server.."
+          echo "::set-output name=content::$MY_STRING"
+        id: my_string
+      - name: display string
+        run: |
+          echo "[INFO]: ${{ steps.my_string.outputs.content }}"
