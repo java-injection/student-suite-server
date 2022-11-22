@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    branches: [ release ]
+  pull_request:
+    branches: [ release ]
+    
+jobs:
+  deploy:
+    name: test strings
+    runs-on: ubuntu-latest
+    environments:
+      name: release
+      url: java-injection.dev
+    steps:
+      - name: create string
+        run: |
+          MY_STRING="Entering Release Phase.."
+          echo "::set-output name=content::$MY_STRING"
+        id: my_string
+      - name: display string
+        run: |
+          echo "The string is: ${{ steps.my_string.outputs.content }}"
