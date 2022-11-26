@@ -1,6 +1,7 @@
 package it.ji.server.controllers;
 
 import it.ji.server.models.Student;
+import it.ji.server.models.StudentDto;
 import it.ji.server.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +24,19 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerStudent(@RequestBody Student student){
-        this.studentService.registerStudent(student);
+    public void registerStudent(@RequestBody StudentDto studentDTO){
+
+        if(studentDTO.getName().isEmpty()){
+            throw new IllegalStateException("Il nome non può essere vuoto");
+        }
+
+        Student student = new Student(
+                studentDTO.getName(),
+                studentDTO.getSurname(),
+                studentDTO.getBirthDate(),
+                studentDTO.getEmail()
+        );
+        studentService.registerStudent(student);
     }
     @DeleteMapping(path = "{student_id}")
     public void deleteStudent(@PathVariable("student_id") Long id){

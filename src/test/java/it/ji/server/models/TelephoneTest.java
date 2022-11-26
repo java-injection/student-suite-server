@@ -28,13 +28,25 @@ class TelephoneTest {
 
     @Test
     void getNumber() {
+        Telephone t1 = new Telephone(1L,"123");
+        String number = t1.getNumber();
+        assertEquals("123", number);
+        Telephone t2 = new Telephone(7L,"456");
+        String number2 = t2.getNumber();
+        assertEquals("456", number2);
     }
 
     @Test
     void setNumber() {
+        Telephone t1 = new Telephone(1L,"123");
+        t1.setNumber("456");
+        assertEquals("456", t1.getNumber());
     }
 
     @Test
     void testEquals() {
+        Telephone t1 = new Telephone(1L,"123");
+        Telephone t2 = new Telephone(1L,"123");
+        assertEquals(t1, t2);
     }
 }

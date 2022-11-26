@@ -11,6 +11,7 @@ public class Telephone {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
     private String number;
 
     public Telephone() {
@@ -25,6 +26,9 @@ public class Telephone {
         this.number = number;
     }
 
+    public boolean isValidNumber(String number){
+        return number.matches("[0-9]+") && number.length() > 8;
+    }
     public Long getId() {
         return id;
     }
