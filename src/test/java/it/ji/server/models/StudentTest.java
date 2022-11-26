@@ -18,7 +18,7 @@ class StudentTest {
                 "gino.rossi@gmail.com"
         );
         String name = s1.getName();
-        assertEquals("Gino",name);
+        assertEquals("Gino", name);
     }
 
     @Test
@@ -30,12 +30,35 @@ class StudentTest {
                 "gino.rossi@gmail.com"
         );
         String name = s1.getName();
-        assertEquals("Gino",name);
+        assertEquals("Gino", name);
         s1.setName("Marco");
         String updatedName = s1.getName();
-        assertEquals("Marco",updatedName);
+        assertEquals("Marco", updatedName);
     }
 
 
+    @Test
+    void getSurname() {
+        Student s1 = new Student(
+                "Gino",
+                "Rossi",
+                LocalDate.of(1984, Month.SEPTEMBER, 13),
+                " luca@gmai.com");
+
+        String surname = s1.getSurname();
+        assertEquals("Rossi", surname);
+    }
+
+    @Test
+    void setSurname() {
+        Student s1 = new Student(
+                "Gino",
+                "Rossi",
+                LocalDate.of(1984, Month.SEPTEMBER, 13),
+                "luca@gmail.com");
+        s1.setSurname("Verdi");
+        String surname = s1.getSurname();
+        assertEquals("Verdi", surname);
+    }
 
 }
