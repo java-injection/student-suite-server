@@ -86,6 +86,11 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.15.3</version>
 		</dependency>
+		<dependency>
+			<groupId>io.getunleash</groupId>
+			<artifactId>unleash-client-java</artifactId>
+			<version>6.1.0</version>
+		</dependency>
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.security</groupId>-->
 <!--			<artifactId>spring-security-test</artifactId>-->

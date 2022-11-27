@@ -72,9 +72,6 @@ public class Student {
         return Period.between(this.birthDate, LocalDate.now()).getYears();
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public LocalDate getBirthDate() {
         return birthDate;
